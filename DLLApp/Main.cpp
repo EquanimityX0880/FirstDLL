@@ -25,11 +25,18 @@ int main() {
     }
 
     // Call the functions using the function pointers
-    int result1 = Add(5, 10);
-    int result2 = Multiply(5, 10);
+    bool loop = true;
+    while (loop) {
+        int result1 = Add(5, 10);
+        int result2 = Multiply(5, 10);
 
-    std::cout << "Add(5, 10) = " << result1 << std::endl;
-    std::cout << "Multiply(5, 10) = " << result2 << std::endl;
+        std::cout << "Add(5, 10) = " << result1 << std::endl;
+        std::cout << "Multiply(5, 10) = " << result2 << std::endl;
+
+        std::cout << "EOL. ";
+        system("pause");
+        std::cout << std::endl;
+    }
 
     // Free the DLL
     FreeLibrary(hDLL);
