@@ -1,3 +1,5 @@
+// default build loc: $(SolutionDir)$(Platform)\$(Configuration)\
+
 #include <iostream>
 #include <windows.h>  // For LoadLibrary and GetProcAddress
 
@@ -5,6 +7,8 @@ typedef int(*AddFunc)(int, int);       // Define function pointer types
 typedef int(*MultiplyFunc)(int, int);
 
 int main() {
+    std::cout << "current PID: " << GetCurrentProcessId() << std::endl;
+
     // Load the DLL at runtime
     HINSTANCE hDLL = LoadLibrary(TEXT("MyLibrary.dll"));
     if (hDLL == NULL) {
